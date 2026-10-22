@@ -1,0 +1,252 @@
+
+/* Global Styling */
+:root {
+    --primary: #00c8f8;
+    --dark: #121b2b;
+    --navy: #17243a;
+    --light: #f4f7fb;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    color: #243247;
+    line-height: 1.7;
+}
+
+/* Navigation */
+.navbar {
+    background-color: var(--dark) !important;
+    padding: 15px 0;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-brand {
+    color: white !important;
+    font-size: 1.4rem;
+}
+
+.navbar-brand:hover,
+.navbar .nav-link:hover {
+    color: var(--primary) !important;
+}
+
+.navbar .nav-link {
+    color: #d1d9e6 !important;
+    margin-left: 15px;
+    transition: color 0.3s ease;
+}
+
+/* Hero Section */
+#home {
+    background: linear-gradient(
+        135deg,
+        #121b2b 0%,
+        #203a5e 100%
+    ) !important;
+
+    min-height: 550px;
+    display: flex;
+    align-items: center;
+    padding-top: 100px !important;
+}
+
+#home h1 {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    letter-spacing: 1px;
+}
+
+#home h2 {
+    color: var(--primary) !important;
+}
+
+#home p {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Buttons */
+.btn-info {
+    background-color: var(--primary);
+    border-color: var(--primary);
+    color: #101827;
+    font-weight: 600;
+    padding: 12px 28px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.btn-info:hover {
+    background-color: #65e2ff;
+    border-color: #65e2ff;
+    transform: translateY(-3px);
+}
+
+/* Section Headings */
+section {
+    padding-top: 85px !important;
+    padding-bottom: 85px !important;
+}
+
+section h2 {
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 35px !important;
+}
+
+section h2::after {
+    content: "";
+    display: block;
+    width: 65px;
+    height: 4px;
+    background-color: var(--primary);
+    margin: 15px auto 0;
+    border-radius: 4px;
+}
+
+/* About */
+#about p {
+    max-width: 1000px;
+    margin: auto;
+}
+
+/* Backgrounds */
+.bg-light {
+    background-color: var(--light) !important;
+}
+
+/* Cards */
+.card {
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.12) !important;
+}
+
+.card-body {
+    padding: 30px;
+}
+
+.card-title {
+    color: var(--navy);
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+/* Contact */
+#contact {
+    text-align: center;
+}
+
+/* Footer */
+footer {
+    background-color: var(--dark) !important;
+    padding: 25px 0 !important;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    #home {
+        min-height: 450px;
+    }
+
+    #home h1 {
+        font-size: 2.5rem;
+    }
+
+    section {
+        padding-top: 60px !important;
+        padding-bottom: 60px !important;
+    }
+
+    .navbar .nav-link {
+        margin-left: 0;
+    }
+}
+
+/* About Section Image */
+#about img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 14px;
+    transition: transform 0.3s ease;
+}
+
+#about img:hover {
+    transform: scale(1.03);
+}
+
+/* About Section Text */
+#about h3 {
+    color: var(--navy);
+    font-size: 1.6rem;
+}
+
+#about .col-md-7 p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #475569;
+}
+
+/* Responsive Image */
+@media (max-width: 768px) {
+    #about img {
+        height: 250px;
+    }
+
+    #about h3 {
+        margin-top: 15px;
+    }
+}
+
+/* Back to Top Button */
+#backToTop {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 48px;
+    height: 48px;
+
+    background-color: var(--primary);
+    color: var(--dark);
+
+    border: none;
+    border-radius: 50%;
+
+    font-size: 26px;
+    font-weight: bold;
+    cursor: pointer;
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+
+    transition: opacity 0.3s ease,
+                transform 0.3s ease,
+                visibility 0.3s ease;
+
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+#backToTop.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+#backToTop:hover {
+    background-color: #65e2ff;
+    transform: translateY(-4px);
+}
